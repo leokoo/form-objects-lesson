@@ -15,10 +15,8 @@ Route::get('/', function () {
 	return view('welcome');
 });
 
-Route::post('posts', function () {
-	// PublishPostForm
-	$form = new \App\Http\Forms\PublishPostForm;
-	$form->save();
+Route::post('posts', function (\App\Http\Requests\PublishPostForm $form) {
+	$form->persist();
 
 	return 'Success!';
 });
