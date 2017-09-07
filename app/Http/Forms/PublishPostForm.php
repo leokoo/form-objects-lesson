@@ -9,6 +9,7 @@ class PublishPostForm extends Form
 	];
 
 	public function persist() {
+		// $post = Post::create($this->fields());
 		var_dump('save crap to the db');
 	}
 }

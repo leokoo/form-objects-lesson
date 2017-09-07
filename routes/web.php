@@ -12,9 +12,13 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+	return view('welcome');
 });
 
 Route::post('posts', function () {
 	// PublishPostForm
+	$form = new \App\Http\Forms\PublishPostForm;
+	$form->save();
+
+	return 'Success!';
 });
